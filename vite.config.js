@@ -20,7 +20,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        terget: "http://backend-api.test",
+        target: "http://backend-api.test",
         changeOrigin: true,
         headers: {
           Accept: "application/json",
