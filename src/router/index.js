@@ -3,7 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import RegisterView from '../views/Auth/RegisterView.vue'
 import LoginView from '@/views/Auth/LoginView.vue'
 import { useAuthStore } from '@/stores/auth'
-import CreateView from '@/views/Posts/CreateView.vue'
+import CreateView from '@/views/posts/CreateView.vue'
+import ShowView from '@/views/posts/ShowView.vue'
+import UpdateView from '@/views/posts/UpdateView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +31,17 @@ const router = createRouter({
       path: '/create',
       name: 'create',
       component: CreateView,
+      meta: { auth: true },
+    },
+    {
+      path: '/post/:id',
+      name: 'show',
+      component: ShowView,
+    },
+    {
+      path: '/post/update/:id',
+      name: 'update',
+      component: UpdateView,
       meta: { auth: true },
     },
   ],
